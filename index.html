@@ -74,7 +74,6 @@
             .bingo-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 6px;
-                justify-content: center; /* Center the grid items horizontally */
             }
             .bingo-cell {
                 font-size: 0.9rem;
@@ -140,12 +139,12 @@
             "Dashboard", "Data Accuracy", "ROI/Return on Investment", "Automation"
         ];
 
-        // Generate a random selection of 20 words for the Bingo card
+        // Generate a random selection of 18 words for the Bingo card
         function generateBingoWords() {
             const selectedWords = [];
             const usedIndices = new Set();
 
-            while (selectedWords.length < 20) {
+            while (selectedWords.length < 18) {
                 const randomIndex = Math.floor(Math.random() * words.length);
                 if (!usedIndices.has(randomIndex)) {
                     selectedWords.push(words[randomIndex]);
@@ -222,7 +221,7 @@
         // Check if Bingo is complete
         function checkBingoCompletion() {
             const markedCells = document.querySelectorAll('.bingo-cell.marked');
-            if (markedCells.length === 20) { // If all 20 cells are marked
+            if (markedCells.length === 18) { // If all 20 cells are marked
                 showPopup();
             }
         }
